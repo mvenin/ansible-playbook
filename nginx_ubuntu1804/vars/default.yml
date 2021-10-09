@@ -4,4 +4,4 @@ http_conf: "veninsoft.conf"
 http_port: "80"
 server_name: 167.172.189.29
 document_root: /var/www/html
-app_root: html_site_main
+app_root: veninsoft
