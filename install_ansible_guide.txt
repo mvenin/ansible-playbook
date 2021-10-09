@@ -1,0 +1,26 @@
+Step 1 — Installing Ansible
+sudo apt-add-repository ppa:ansible/ansible
+sudo apt update
+sudo apt install ansible
+
+Step 2 — Setting Up the Inventory File
+
+sudo nano /etc/ansible/hosts
+[servers]
+server1 ansible_host=167.172.189.29
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
+
+
+Step 3 — Testing Inventory and Connection
+ansible-inventory --list -y
+
+ansible all -m ping -u root
+
+Step 4 — Running Ad-Hoc Commands (Optional)
+ansible all -a "df -h" -u root
+
+Step 5 - Installing plugin community.digitalocean.digital_ocean_domain
+ansible-galaxy collection install community.digitalocean
+
