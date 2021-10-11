@@ -49,6 +49,12 @@
         port: "{{ http_port }}"
         proto: tcp
 
+    - name: "UFW - Allow HTTP on port {{ https_port }}"
+      ufw:
+        rule: allow
+        port: {{ https_port }}
+        proto: tcp
+
   handlers:
     - name: Reload Nginx
       service:

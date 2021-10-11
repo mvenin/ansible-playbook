@@ -1,0 +1,26 @@
+##################################################
+# DO Community Playbooks: LEMP on Ubuntu 18.04
+##################################################
+---
+- hosts: server1
+  become: yes
+  vars_files:
+    - vars/default.yml
+
+  tasks:
+    - name: "UFW - Allow HTTP on port {{ https_port }}"
+      ufw:
+        rule: allow
+        port: {{ https_port }}
+        proto: tcp
+
+  handlers:
+    - name: Reload Nginx
+      service:
+        name: nginx
+        state: reloaded
+
+    - name: Restart Nginx
+      service:
+        name: nginx
+        state: restarted

@@ -12,7 +12,7 @@
         community.digitalocean.digital_ocean_domain_record:
           oauth_token: {{ oauth_token }}
           state: present
-          domain: veninsoft.com
+          domain: {{ domain_name }}
           type: A
           name: "@"
           data: 10.114.0.2
@@ -21,7 +21,7 @@
         community.digitalocean.digital_ocean_domain_record:
           oauth_token: {{ oauth_token }}
           state: present
-          domain: veninsoft.com
+          domain: {{ domain_name }}
           type: A
           name: www
           data: 10.114.0.2

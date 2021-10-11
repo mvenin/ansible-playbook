@@ -2,6 +2,7 @@
 http_host: "veninsoft"
 http_conf: "veninsoft.conf"
 http_port: "80"
+https_port: "433"
 server_name: 167.172.189.29
 document_root: /var/www/html
 app_root: veninsoft
